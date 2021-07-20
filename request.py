@@ -31,6 +31,6 @@ m = folium.Map(location=[60.3935, 5.325], zoom_start=14,  tiles='cartodbdark_mat
 marker_cluster = MarkerCluster().add_to(m)
 
 for row in data.itertuples():
-    folium.Marker(location=[row.lat,row.lon],popup= (row.name, row.capacity) , icon=folium.Icon(color='blue')).add_to(marker_cluster)
+    folium.Marker(location=[row.lat,row.lon],popup= row.name, row.capacity , icon=folium.Icon(color='blue')).add_to(marker_cluster)
 
 m.save('sykker_bergen.html')
